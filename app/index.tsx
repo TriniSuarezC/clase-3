@@ -6,7 +6,6 @@ export default function Index() {
   return (
     <View>
       <Header/>
-      <Contador/>
       </View>
   );
 }
