@@ -35,6 +35,12 @@ const styles = StyleSheet.create({
       letterSpacing: 0.25,
       color: 'blue',
     },
+    textoContador: {
+      fontSize: 15,
+      fontWeight: 'bold',
+      textAlign: 'center',
+      margin: 20,
+    },
   });
 
     export default styles;

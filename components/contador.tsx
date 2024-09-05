@@ -9,13 +9,13 @@ function Contador(){
   
     return (
       <View>
-        <Text>Contador: {contador}</Text>
         <Pressable style={styles.button} onPress={incremetar}> 
           <Text style={styles.text}>Incrementar</Text> 
         </Pressable>
         <Pressable style={styles.button2} onPress={decrementar}> 
           <Text style={styles.text2}>Decrementar</Text> 
         </Pressable>
+        <Text style={styles.textoContador}>Contador: {contador}</Text>
       </View> 
     );
   }
