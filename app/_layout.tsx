@@ -1,4 +1,5 @@
 import { Stack, Tabs} from "expo-router";
+import { Image } from 'react-native';
 
 export default function RootLayout() {
   return (
@@ -15,8 +16,12 @@ export default function RootLayout() {
         options={{
           title: 'Profile',
           href: '/ProfileTab',
-          tabBarIcon: require('../assets/images/user.png'),
-
+          tabBarIcon: () => (
+            <Image 
+              source={require('../assets/images/user.png')} 
+              style={{ width: 24, height: 24 }} 
+            />
+          ),
         }}
         
       />
@@ -25,15 +30,26 @@ export default function RootLayout() {
         options={{
           title: 'Contador',
           href: '/ContadorTab',
-          tabBarIcon: require('../assets/images/keys.png'),
+          tabBarIcon: () => (
+            <Image 
+              source={require('../assets/images/keys.png')} 
+              style={{ width: 24, height: 24 }} 
+            />
+          ),
         }}
+        
       />
       <Tabs.Screen
         name="TarjetasTab"
         options={{
           title: 'Cards',
           href: '/TarjetasTab',
-          tabBarIcon: require('../assets/images/flash-cards.png'),
+          tabBarIcon: () => (
+            <Image 
+              source={require('../assets/images/flash-cards.png')} 
+              style={{ width: 24, height: 24 }} 
+            />
+          ),
         }}
       />
       <Tabs.Screen
