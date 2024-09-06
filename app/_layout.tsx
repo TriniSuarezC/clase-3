@@ -7,7 +7,7 @@ export default function RootLayout() {
         name="index"
         options={{
           title: 'Home',
-          href: '/',
+          href: null,
         }}
       />
       <Tabs.Screen
@@ -15,13 +15,17 @@ export default function RootLayout() {
         options={{
           title: 'Profile',
           href: '/ProfileTab',
+          tabBarIcon: require('../assets/images/user.png'),
+
         }}
+        
       />
       <Tabs.Screen
         name="ContadorTab"
         options={{
           title: 'Contador',
           href: '/ContadorTab',
+          tabBarIcon: require('../assets/images/keys.png'),
         }}
       />
       <Tabs.Screen
@@ -29,6 +33,7 @@ export default function RootLayout() {
         options={{
           title: 'Cards',
           href: '/TarjetasTab',
+          tabBarIcon: require('../assets/images/flash-cards.png'),
         }}
       />
       <Tabs.Screen

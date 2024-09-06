@@ -1,50 +1,46 @@
+
 import { StyleSheet, Text, View, Pressable } from 'react-native'
 import React from 'react'
-import { Link } from 'expo-router'
+import { router, useLocalSearchParams } from 'expo-router';
 
-const ProfileTab = () => {
+
+const perfil = () => {
+  const {user = 'Who the f*ck are you?'} = useLocalSearchParams();
   return (
-    <View style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}>
-      <Text style={styles.titulo}>ProfileTab</Text>
-      <Text style={styles.welcomeText}>Welcome</Text>
-      <Link href={'/UpdateProfileTab'} asChild>
-      <Pressable style={styles.updateButton}>
-        <Text style={styles.updateText}>Update Profile</Text>
-      </Pressable></Link>
-      
+    <View style={styles.container}>
+        <Text style={styles.text}>Welcome, {user}</Text>
+        <Pressable style={styles.updateButton} onPress={() => router.push({pathname: '/UpdateProfileTab'})}>
+        <Text style={styles.updateText}>Change Profile Name</Text>
+      </Pressable>
+
     </View>
   )
 }
 
-export default ProfileTab
+export default perfil
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
     updateButton: {
         backgroundColor: '#9C4196',
-        padding: 20,
-        margin: 10,
+        padding: 10,
         borderRadius: 5,
-        alignItems: 'center',
-        width: '80%'
+        marginTop: 20,
+        width: '80%',
     },
     updateText: {
-        color: '#FFFFFF',
-        fontWeight: 'bold',
-    },
-    titulo: {
-        fontSize: 24,
-        fontWeight: 'bold',
+        color: '#fff',
+        fontSize: 18,
         textAlign: 'center',
-        margin: 20,
     },
-    welcomeText: {
-        fontSize: 16,
-        fontWeight: 'bold',
-        textAlign: 'center',
-        margin: 20,
+    text: {
+        fontSize: 20,
+        marginBottom: 10,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
 })
