@@ -3,7 +3,22 @@ import { Image } from 'react-native';
 
 export default function RootLayout() {
   return (
-      <Tabs>
+      <Tabs screenOptions={{
+        tabBarInactiveBackgroundColor: '#FFE8DF',
+        tabBarActiveTintColor: '#000000',
+        tabBarInactiveTintColor: '#D57955',
+        tabBarStyle: {
+          backgroundColor: '#FFE8DF',
+          borderRadius: 20,
+          marginHorizontal: 20,
+          marginBottom: 10,
+          height: '9%',
+          elevation: 5,
+          shadowColor: '#000',
+          shadowOpacity: 0.2, 
+          shadowRadius: 10, 
+        },
+      }}>
       <Tabs.Screen
         name="index"
         options={{
